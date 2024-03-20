@@ -60,6 +60,7 @@ type prometheusAdapter struct {
 	caCertConfigMap string
 	schedule        string
 	step            string
+	sinkUrl         string
 	lastRun         time.Time
 	req             *http.Request
 	client          *http.Client
@@ -85,6 +86,7 @@ func NewAdapter(ctx context.Context, processed adapter.EnvConfigAccessor, ceClie
 		caCertConfigMap: env.CACertConfigMap,
 		schedule:        env.Schedule,
 		step:            env.Step,
+		sinkUrl:         env.Sink,
 		lastRun:         time.Now(),
 	}
 
@@ -143,8 +145,9 @@ func (a *prometheusAdapter) send() {
 		a.logger.Error("HTTP reply error", zap.Error(err))
 		return
 	}
+	ctx := context.Background()
 	if len(reply) > 0 {
-		event, err := a.makeEvent(reply)
+		event, err := a.makeEvent(ctx, reply)
 		if err != nil {
 			a.logger.Error("Cloud Event creation error", zap.Error(err))
 			return
@@ -157,7 +160,8 @@ func (a *prometheusAdapter) send() {
 	}
 }
 
-func (a *prometheusAdapter) makeEvent(payload interface{}) (*cloudevents.Event, error) {
+func (a *prometheusAdapter) makeEvent(ctx context.Context, payload interface{}) (*cloudevents.Event, error) {
+	ctx = cloudevents.ContextWithTarget(ctx, a.sinkUrl)
 	event := cloudevents.NewEvent(cloudevents.VersionV1)
 	event.SetSource(a.source)
 	event.SetID(string(uuid.NewUUID()))
