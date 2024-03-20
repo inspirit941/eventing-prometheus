@@ -21,15 +21,15 @@ package filtered
 import (
 	context "context"
 
+	apissourcesv1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/apis/sources/v1alpha1"
+	versioned "github.com/inspirit941/eventing-prometheus/pkg/client/clientset/versioned"
+	v1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/client/informers/externalversions/sources/v1alpha1"
+	client "github.com/inspirit941/eventing-prometheus/pkg/client/injection/client"
+	filtered "github.com/inspirit941/eventing-prometheus/pkg/client/injection/informers/factory/filtered"
+	sourcesv1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/client/listers/sources/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	labels "k8s.io/apimachinery/pkg/labels"
 	cache "k8s.io/client-go/tools/cache"
-	apissourcesv1alpha1 "knative.dev/eventing-prometheus/pkg/apis/sources/v1alpha1"
-	versioned "knative.dev/eventing-prometheus/pkg/client/clientset/versioned"
-	v1alpha1 "knative.dev/eventing-prometheus/pkg/client/informers/externalversions/sources/v1alpha1"
-	client "knative.dev/eventing-prometheus/pkg/client/injection/client"
-	filtered "knative.dev/eventing-prometheus/pkg/client/injection/informers/factory/filtered"
-	sourcesv1alpha1 "knative.dev/eventing-prometheus/pkg/client/listers/sources/v1alpha1"
 	controller "knative.dev/pkg/controller"
 	injection "knative.dev/pkg/injection"
 	logging "knative.dev/pkg/logging"
@@ -81,7 +81,7 @@ func Get(ctx context.Context, selector string) v1alpha1.PrometheusSourceInformer
 	untyped := ctx.Value(Key{Selector: selector})
 	if untyped == nil {
 		logging.FromContext(ctx).Panicf(
-			"Unable to fetch knative.dev/eventing-prometheus/pkg/client/informers/externalversions/sources/v1alpha1.PrometheusSourceInformer with selector %s from context.", selector)
+			"Unable to fetch github.com/inspirit941/eventing-prometheus/pkg/client/informers/externalversions/sources/v1alpha1.PrometheusSourceInformer with selector %s from context.", selector)
 	}
 	return untyped.(v1alpha1.PrometheusSourceInformer)
 }

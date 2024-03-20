@@ -19,9 +19,9 @@ limitations under the License.
 package v1alpha1
 
 import (
+	v1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/apis/sources/v1alpha1"
+	"github.com/inspirit941/eventing-prometheus/pkg/client/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
-	v1alpha1 "knative.dev/eventing-prometheus/pkg/apis/sources/v1alpha1"
-	"knative.dev/eventing-prometheus/pkg/client/clientset/versioned/scheme"
 )
 
 type SourcesV1alpha1Interface interface {

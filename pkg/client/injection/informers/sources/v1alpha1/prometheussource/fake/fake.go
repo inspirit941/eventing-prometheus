@@ -21,8 +21,8 @@ package fake
 import (
 	context "context"
 
-	fake "knative.dev/eventing-prometheus/pkg/client/injection/informers/factory/fake"
-	prometheussource "knative.dev/eventing-prometheus/pkg/client/injection/informers/sources/v1alpha1/prometheussource"
+	fake "github.com/inspirit941/eventing-prometheus/pkg/client/injection/informers/factory/fake"
+	prometheussource "github.com/inspirit941/eventing-prometheus/pkg/client/injection/informers/sources/v1alpha1/prometheussource"
 	controller "knative.dev/pkg/controller"
 	injection "knative.dev/pkg/injection"
 )

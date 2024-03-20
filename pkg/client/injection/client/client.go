@@ -24,6 +24,9 @@ import (
 	errors "errors"
 	fmt "fmt"
 
+	v1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/apis/sources/v1alpha1"
+	versioned "github.com/inspirit941/eventing-prometheus/pkg/client/clientset/versioned"
+	typedsourcesv1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/client/clientset/versioned/typed/sources/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	unstructured "k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
 	runtime "k8s.io/apimachinery/pkg/runtime"
@@ -33,9 +36,6 @@ import (
 	discovery "k8s.io/client-go/discovery"
 	dynamic "k8s.io/client-go/dynamic"
 	rest "k8s.io/client-go/rest"
-	v1alpha1 "knative.dev/eventing-prometheus/pkg/apis/sources/v1alpha1"
-	versioned "knative.dev/eventing-prometheus/pkg/client/clientset/versioned"
-	typedsourcesv1alpha1 "knative.dev/eventing-prometheus/pkg/client/clientset/versioned/typed/sources/v1alpha1"
 	injection "knative.dev/pkg/injection"
 	dynamicclient "knative.dev/pkg/injection/clients/dynamicclient"
 	logging "knative.dev/pkg/logging"
@@ -66,10 +66,10 @@ func Get(ctx context.Context) versioned.Interface {
 	if untyped == nil {
 		if injection.GetConfig(ctx) == nil {
 			logging.FromContext(ctx).Panic(
-				"Unable to fetch knative.dev/eventing-prometheus/pkg/client/clientset/versioned.Interface from context. This context is not the application context (which is typically given to constructors via sharedmain).")
+				"Unable to fetch github.com/inspirit941/eventing-prometheus/pkg/client/clientset/versioned.Interface from context. This context is not the application context (which is typically given to constructors via sharedmain).")
 		} else {
 			logging.FromContext(ctx).Panic(
-				"Unable to fetch knative.dev/eventing-prometheus/pkg/client/clientset/versioned.Interface from context.")
+				"Unable to fetch github.com/inspirit941/eventing-prometheus/pkg/client/clientset/versioned.Interface from context.")
 		}
 	}
 	return untyped.(versioned.Interface)

@@ -19,8 +19,8 @@ limitations under the License.
 package sources
 
 import (
-	internalinterfaces "knative.dev/eventing-prometheus/pkg/client/informers/externalversions/internalinterfaces"
-	v1alpha1 "knative.dev/eventing-prometheus/pkg/client/informers/externalversions/sources/v1alpha1"
+	internalinterfaces "github.com/inspirit941/eventing-prometheus/pkg/client/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/client/informers/externalversions/sources/v1alpha1"
 )
 
 // Interface provides access to each of this group's versions.

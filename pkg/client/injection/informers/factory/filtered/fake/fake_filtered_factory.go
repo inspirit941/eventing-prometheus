@@ -21,10 +21,10 @@ package fakeFilteredFactory
 import (
 	context "context"
 
+	externalversions "github.com/inspirit941/eventing-prometheus/pkg/client/informers/externalversions"
+	fake "github.com/inspirit941/eventing-prometheus/pkg/client/injection/client/fake"
+	filtered "github.com/inspirit941/eventing-prometheus/pkg/client/injection/informers/factory/filtered"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	externalversions "knative.dev/eventing-prometheus/pkg/client/informers/externalversions"
-	fake "knative.dev/eventing-prometheus/pkg/client/injection/client/fake"
-	filtered "knative.dev/eventing-prometheus/pkg/client/injection/informers/factory/filtered"
 	controller "knative.dev/pkg/controller"
 	injection "knative.dev/pkg/injection"
 	logging "knative.dev/pkg/logging"

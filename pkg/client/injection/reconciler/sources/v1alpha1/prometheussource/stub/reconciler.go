@@ -22,8 +22,8 @@ import (
 	context "context"
 
 	v1 "k8s.io/api/core/v1"
-	v1alpha1 "knative.dev/eventing-prometheus/pkg/apis/sources/v1alpha1"
-	prometheussource "knative.dev/eventing-prometheus/pkg/client/injection/reconciler/sources/v1alpha1/prometheussource"
+	v1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/apis/sources/v1alpha1"
+	prometheussource "github.com/inspirit941/eventing-prometheus/pkg/client/injection/reconciler/sources/v1alpha1/prometheussource"
 	reconciler "knative.dev/pkg/reconciler"
 )
 

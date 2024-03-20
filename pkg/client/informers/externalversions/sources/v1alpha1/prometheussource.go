@@ -22,14 +22,14 @@ import (
 	"context"
 	time "time"
 
+	sourcesv1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/apis/sources/v1alpha1"
+	versioned "github.com/inspirit941/eventing-prometheus/pkg/client/clientset/versioned"
+	internalinterfaces "github.com/inspirit941/eventing-prometheus/pkg/client/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/client/listers/sources/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
 	cache "k8s.io/client-go/tools/cache"
-	sourcesv1alpha1 "knative.dev/eventing-prometheus/pkg/apis/sources/v1alpha1"
-	versioned "knative.dev/eventing-prometheus/pkg/client/clientset/versioned"
-	internalinterfaces "knative.dev/eventing-prometheus/pkg/client/informers/externalversions/internalinterfaces"
-	v1alpha1 "knative.dev/eventing-prometheus/pkg/client/listers/sources/v1alpha1"
 )
 
 // PrometheusSourceInformer provides access to a shared informer and lister for

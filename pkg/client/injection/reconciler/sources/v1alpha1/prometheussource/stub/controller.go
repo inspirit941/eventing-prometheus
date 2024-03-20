@@ -21,8 +21,8 @@ package prometheussource
 import (
 	context "context"
 
-	prometheussource "knative.dev/eventing-prometheus/pkg/client/injection/informers/sources/v1alpha1/prometheussource"
-	v1alpha1prometheussource "knative.dev/eventing-prometheus/pkg/client/injection/reconciler/sources/v1alpha1/prometheussource"
+	prometheussource "github.com/inspirit941/eventing-prometheus/pkg/client/injection/informers/sources/v1alpha1/prometheussource"
+	v1alpha1prometheussource "github.com/inspirit941/eventing-prometheus/pkg/client/injection/reconciler/sources/v1alpha1/prometheussource"
 	configmap "knative.dev/pkg/configmap"
 	controller "knative.dev/pkg/controller"
 	logging "knative.dev/pkg/logging"
