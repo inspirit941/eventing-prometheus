@@ -46,7 +46,7 @@ spec:
       containers:
         - name: prometheus-source-webhook
           terminationMessagePolicy: FallbackToLogsOnError
-          image: ko://knative.dev/eventing-prometheus/cmd/webhook
+          image: ko://github.com/inspirit941/eventing-prometheus/cmd/webhook
           env:
             - name: SYSTEM_NAMESPACE
               valueFrom:

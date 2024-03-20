@@ -33,7 +33,7 @@ import (
 	"knative.dev/eventing/pkg/adapter/v2"
 	"knative.dev/pkg/logging"
 
-	"knative.dev/eventing-prometheus/pkg/apis/sources/v1alpha1"
+	"github.com/inspirit941/eventing-prometheus/pkg/apis/sources/v1alpha1"
 )
 
 type envConfig struct {

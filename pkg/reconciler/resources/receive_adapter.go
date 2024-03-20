@@ -24,7 +24,7 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"knative.dev/pkg/kmeta"
 
-	"knative.dev/eventing-prometheus/pkg/apis/sources/v1alpha1"
+	"github.com/inspirit941/eventing-prometheus/pkg/apis/sources/v1alpha1"
 )
 
 // ReceiveAdapterArgs are the arguments needed to create a Prometheus Receive Adapter.

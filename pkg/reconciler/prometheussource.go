@@ -26,6 +26,7 @@ import (
 	"knative.dev/eventing/pkg/reconciler/source"
 	"knative.dev/pkg/controller"
 
+	"github.com/inspirit941/eventing-prometheus/pkg/reconciler/resources"
 	"github.com/kelseyhightower/envconfig"
 	"github.com/robfig/cron"
 	"go.uber.org/zap"
@@ -35,15 +36,14 @@ import (
 	apierrors "k8s.io/apimachinery/pkg/api/errors"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	appsv1listers "k8s.io/client-go/listers/apps/v1"
-	"knative.dev/eventing-prometheus/pkg/reconciler/resources"
 	"knative.dev/pkg/apis"
 	duckv1 "knative.dev/pkg/apis/duck/v1"
 	"knative.dev/pkg/logging"
 	pkgreconciler "knative.dev/pkg/reconciler"
 	"knative.dev/pkg/resolver"
 
-	"knative.dev/eventing-prometheus/pkg/apis/sources/v1alpha1"
-	promreconciler "knative.dev/eventing-prometheus/pkg/client/injection/reconciler/sources/v1alpha1/prometheussource"
+	"github.com/inspirit941/eventing-prometheus/pkg/apis/sources/v1alpha1"
+	promreconciler "github.com/inspirit941/eventing-prometheus/pkg/client/injection/reconciler/sources/v1alpha1/prometheussource"
 )
 
 const (

@@ -19,8 +19,8 @@ package main
 import (
 	"context"
 
+	sourcev1alpha1 "github.com/inspirit941/eventing-prometheus/pkg/apis/sources/v1alpha1"
 	"k8s.io/apimachinery/pkg/runtime/schema"
-	sourcev1alpha1 "knative.dev/eventing-prometheus/pkg/apis/sources/v1alpha1"
 	"knative.dev/pkg/configmap"
 	"knative.dev/pkg/controller"
 	"knative.dev/pkg/injection/sharedmain"

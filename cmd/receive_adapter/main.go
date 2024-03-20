@@ -19,7 +19,7 @@ package main
 import (
 	"knative.dev/eventing/pkg/adapter/v2"
 
-	prometheusadapter "knative.dev/eventing-prometheus/pkg/adapter"
+	prometheusadapter "github.com/inspirit941/eventing-prometheus/pkg/adapter"
 )
 
 func main() {

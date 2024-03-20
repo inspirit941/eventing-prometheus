@@ -17,7 +17,7 @@ limitations under the License.
 package main
 
 import (
-	"knative.dev/eventing-prometheus/pkg/reconciler"
+	"github.com/inspirit941/eventing-prometheus/pkg/reconciler"
 	"knative.dev/pkg/injection/sharedmain"
 )
 
